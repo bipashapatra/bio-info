@@ -1,0 +1,10 @@
+{% extends "pages/default.html" %}
+<ul>
+{% for contact in data.contactForm %}
+
+    <li> Title :: {{ contact.title }} </li>
+    <li> Name :: {{ contact.name }} </li>
+    <li> Email :: {{ contact.email }} </li>
+
+{% endfor %}
+</ul>

@@ -1,0 +1,39 @@
+{% for piece in data.widget._pieces %}
+<div class="persion-widget" style="padding: 50px;" data-piece-id="{{ piece._id }}">
+	<h1>Category: {{ piece.title }}</h1>
+    <div class="display-area">
+	<ul class="display-person">
+	{% for person in piece.persons %}
+		<li><strong>Name:</strong> {{ person.name }}</li>
+		<li><strong>Email:</strong> {{ person.email }}</li>
+		<li><strong>Biography:</strong> {{ person.biography }}</li>
+        <li>&nbsp;&nbsp;</li>
+	{% endfor %}
+	</ul>
+</div>
+</div>
+    {% endfor %}
+
+
+	<div class="person-form">
+        <table>
+            <tr>
+		    <td>Name </td>
+            <td><input type="text" name="name" style="padding: 10px;" data-person-name></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="text" name="email" data-person-email></td>
+            </tr>
+		  <tr>
+              <td>Biography</td>
+              <td><textarea name="biography" data-person-biography></textarea></td>
+          </tr>
+          <tr>
+		<td></td>
+              <td><button class="submit-person" data-person-submit>Submit</button></td>
+          </tr>
+        </table>
+	</div>
+</div>
+

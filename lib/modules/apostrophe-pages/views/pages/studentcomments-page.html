@@ -1,0 +1,9 @@
+{% extends "pages/default.html" %}
+    <ul>
+        {% for comment in data.studentcomments %}
+        <li><strong>{{ comment.name }}:</strong> {{ comment.comment }}</li>
+        <li>Date :: {{ comment.date }}  Time:: {{ comment.time }}</li>
+<!--        <li>Email :: {{ comment._students.email }} </li>-->
+        <li>&nbsp;&nbsp;</li>
+        {% endfor %}
+    </ul>

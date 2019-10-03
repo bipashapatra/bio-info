@@ -1,0 +1,29 @@
+{% for piece in data.widget._pieces %}
+<div class="display-comment" style="padding: 50px;" data-piece-id="{{ piece._id }}">
+	<h1>COMMENTS: {{ piece.title }}</h1>
+	<ul>
+	{% for comment in piece.studentcomments %}
+		<li><strong>{{ comment.name }}:</strong> {{ comment.comment }}</li>
+		<li>Date :: {{ comment.date }}  Time:: {{ comment.time }}</li>
+	   <li>&nbsp;&nbsp;</li>
+	{% endfor %}
+	</ul>
+	<div class="comment-form">
+		<table>
+			<tr>
+				<td>Enter Name</td>
+				<td><input type="text" name="comment" style="padding: 10px;" data-name-input></td>
+			</tr>
+			<tr>
+				<td>Enter comment</td>
+				<td><textarea data-comment-input></textarea></td>
+			</tr>
+
+			<tr>
+				<td></td>
+		<td><button class="submit-comment" data-comment-submit style="padding: 10px;">Submit</button></td>
+			</tr>
+		</table>
+	</div>
+</div>
+{% endfor %}

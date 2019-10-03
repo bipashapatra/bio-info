@@ -1,0 +1,53 @@
+{% for piece in data.widget._pieces %}
+<div class="student-widget" style="padding: 50px;" data-piece-id="{{ piece._id }}">
+	<h1>Category: {{ piece.title }}</h1>
+    <div class="display-area">
+	<ul class="display-student">
+	{% for student in piece.students %}
+		<li><strong>Name:</strong> {{ student.name }}</li>
+		<li><strong>Email:</strong> {{ student.email }}</li>
+		<li><strong>Biography:</strong> {{ student.biography }}
+
+        </li>
+        <li><strong>Phone:</strong> {{ student.phone }}</li>
+        <li><strong>Photo:</strong>
+            {% set image = apos.images.first(student.thumbnail) %}
+            {% if image %}
+            <img src="{{ apos.attachments.url(image, { size: 'one-sixth' }) }}" />
+            {% endif %}</li>
+        <li>&nbsp;&nbsp;</li>
+	{% endfor %}
+	</ul>
+</div>
+</div>
+    {% endfor %}
+
+
+	<div class="student-form">
+        <table>
+            <tr>
+		    <td>Name </td>
+            <td><input type="text" name="name" style="padding: 10px;" data-student-name></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="text" name="email" data-student-email></td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td><input type="text" name="phone" data-student-phone></td>
+            </tr>
+		  <tr>
+              <td>Biography</td>
+              <td><textarea name="biography" data-student-biography></textarea></td>
+          </tr>
+
+
+          <tr>
+		<td></td>
+              <td><button class="submit-student" data-student-submit>Submit</button></td>
+          </tr>
+        </table>
+	</div>
+</div>
+
